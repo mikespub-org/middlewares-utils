@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-<<<<<<< HEAD
 ## [4.0.0] - 2023-12-17
 ### Added
 - Support for psr/http-message 2.x (if you don't use slim/psr7 or sunrise/http-message as factory)
@@ -15,14 +14,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Support for PHP prior to 8.1.
 
-=======
-## [3.4.0] - 2023-12-15
-### Added
-- Support for psr/http-message 2.x (if you don't use slim/psr7 or sunrise/http-message as factory)
-### Changed
-- Updated dependencies and tests
-
->>>>>>> 2e60b85 (update changelog)
 ## [3.3.0] - 2021-07-04
 ### Added
 - Support for psr/container v2.x [#26]
