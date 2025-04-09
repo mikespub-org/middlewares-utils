@@ -12,13 +12,14 @@ use UnexpectedValueException;
 
 class Dispatcher implements RequestHandlerInterface
 {
-    /** @var array */
     private $stack;
 
     /**
      * Static helper to create and dispatch a request.
+     *
+     * @param CallableHandler[]|MiddlewareInterface[]|callable[] $stack
      */
-    public static function run(array $stack, ServerRequestInterface $request = null): ResponseInterface
+    public static function run(array $stack, ?ServerRequestInterface $request = null): ResponseInterface
     {
         if ($request === null) {
             $request = Factory::createServerRequest('GET', '/');
@@ -27,6 +28,9 @@ class Dispatcher implements RequestHandlerInterface
         return (new static($stack))->dispatch($request);
     }
 
+    /**
+     * @param CallableHandler[]|MiddlewareInterface[]|callable[] $stack
+     */
     public function __construct(array $stack)
     {
         $this->stack = $stack;

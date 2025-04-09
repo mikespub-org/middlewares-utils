@@ -22,7 +22,7 @@ class CallableHandler implements MiddlewareInterface, RequestHandlerInterface
     /** @var ResponseFactoryInterface|null */
     private $responseFactory;
 
-    public function __construct(callable $callable, ResponseFactoryInterface $responseFactory = null)
+    public function __construct(callable $callable, ?ResponseFactoryInterface $responseFactory = null)
     {
         $this->callable = $callable;
         $this->responseFactory = $responseFactory;
@@ -58,6 +58,8 @@ class CallableHandler implements MiddlewareInterface, RequestHandlerInterface
 
     /**
      * Execute the callable.
+     *
+     * @param array<int,ServerRequestInterface|RequestHandlerInterface> $arguments
      */
     private function execute(array $arguments = []): ResponseInterface
     {
